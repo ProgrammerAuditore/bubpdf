@@ -7,8 +7,15 @@ use Illuminate\Http\Request;
 
 class PaginaController extends Controller
 {
+
     public function inicio()
     {
         return view('paginas.inicio');
     }
+
+    public function empleados()
+    {
+        return view('paginas.empleados');
+    }
+
 }
