@@ -1,0 +1,5 @@
+.vagrant/
+.git/
+node_modules/
+vendor/
+.my-codes/

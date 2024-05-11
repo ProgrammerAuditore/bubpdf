@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+/.vagrant
+/.my-codes
 .env
 .env.backup
 .phpunit.result.cache
