@@ -1,0 +1,229 @@
+/**********************************************
+**** * * * * CUSTOM CSS
+************************************************/
+
+:root {
+    --pdf-bg-dark: rgb(31, 41, 55) !important;
+    --pdf-text-primary: #e5e7eb !important;
+    --pdf-text-dark: #333 !important;
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0)
+    );
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+body {
+    background: white;
+    font-family: "Nunito", "Mulish", Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ol,
+ul,
+li,
+img,
+span,
+input,
+form,
+label,
+.btn,
+.navbar,
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+p::selection,
+a::selection,
+ol::selection,
+ul::selection,
+li::selection,
+img::selection,
+span::selection,
+input::selection,
+form::selection,
+label::selection,
+.btn::selection,
+.navbar::selection,
+.navbar-brand::selection {
+    color: var(--pdf-text-dark);
+    background: #187fcc;
+    text-shadow: 1px 1px 1px #333;
+}
+
+ol,
+ul,
+li {
+    list-style-type: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+h1 {
+    font-size: 50px;
+    color: var(--pdf-text-primary);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 40px;
+    color: var(--pdf-text-primary);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 35px;
+    color: var(--pdf-text-primary);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 30px;
+    color: var(--pdf-text-primary);
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 25px;
+    color: var(--pdf-text-primary);
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 18px;
+    color: var(--pdf-text-primary);
+}
+
+p {
+    font-size: 14px;
+    color: var(--pdf-text-dark);
+}
+
+.ptb-50 {
+    padding: 50px 0px;
+}
+
+.mtb-15 {
+    margin: 15px 0;
+}
+
+/**********************************************
+**** * * * * HEADER MAIN CSS
+************************************************/
+
+.main_header {
+    background: var(--pdf-bg-dark);
+    padding: 5px 80px;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    z-index: 9999;
+}
+
+.main_header h4 {
+    color: #fff;
+    padding: 10px;
+}
+
+.main_header img {
+    float: left;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/**********************************************
+**** * * * * DataTable CSS
+************************************************/
+
+.datatable-css {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 1px 3px 5px #aaa;
+    border-radius: 5px;
+}
+
+.datatable-css .btn {
+    padding: 5px 10px;
+    margin: 10px 3px 10px 0;
+}
+
+/**********************************************
+**** * * * * NAVBAR CSS
+************************************************/
+
+.nav-link-icon-css {
+    font-size: 1.2rem;
+}
+
+.nav-bar-aside-css {
+    border-right: solid #e5e7eb 1px;
+    width: 240px;
+    background-color: white !important;
+}
+
+.nav-bar-aside-css  * {
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.nav-bar-aside-css .nav-link:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+/**********************************************
+**** * * * * FOOTER CSS
+************************************************/
+
+.footer-css {
+    background-color: var(--pdf-bg-dark);
+}
+
+.footer-css * {
+    color: #fff !important;
+}
+
+/**********************************************
+**** * * * * TITLE MAIN CSS
+************************************************/
+
+.title-main-content-css {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border-bottom: solid 2px #e5e7eb;
+    color: rgb(100, 116, 139);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
