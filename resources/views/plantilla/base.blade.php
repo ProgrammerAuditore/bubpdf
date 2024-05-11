@@ -19,7 +19,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/datatables.min.css') }}">
 
     <!-- Custom -->
-    <title>BubPDF | @yield('pagina-titulo')</title>
+    <title>
+        BubPDF
+        @isset($__env->getSections()['pagina-titulo'])
+            | @yield('pagina-titulo')
+        @endif
+    </title>
+
     <meta content="@yield('pagina-descripcion')" name="description">
     <meta content="Author" name="ProgrammerAuditore">
     <link href="assets/images/favicon.png" rel="icon">

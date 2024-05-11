@@ -1,6 +1,10 @@
 <div class="container">
     <h1 class="title-main-content-css">
-        @yield('contenido-titulo')
+        @isset($__env->getSections()['contenido-titulo'])
+            @yield('contenido-titulo')
+        @else
+            Sin titulo de página declare
+        @endif
     </h1>
     <div class="container py-4">
         <div class="row">
