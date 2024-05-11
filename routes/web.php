@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SistemaGlobal\PaginaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PaginaController::class, 'inicio'])
+->name('bubpdf.pagina.index');
+
+Route::get('/inicio', [PaginaController::class, 'inicio'])
+->name('bubpdf.pagina.inicio');
+

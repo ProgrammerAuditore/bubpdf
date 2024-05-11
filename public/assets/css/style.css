@@ -25,6 +25,14 @@
     border-color: #e5e7eb;
 }
 
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme('borderColor.DEFAULT', currentColor);
+}
+
 body {
     background: white;
     font-family: "Nunito", "Mulish", Arial, Helvetica, sans-serif;
@@ -51,8 +59,85 @@ label,
 .navbar-brand {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+a,
+a:hover {
+    text-decoration: none;
+    color: #333;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+/*
+* @des Esto son prefijos de estilo Tailwind
+* @see https://tailwindcss.com/docs/preflight
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ol,
+ul,
+li {
+    list-style-type: none;
+}
+
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/**********************************************
+**** * * * * SELECT EVENT CSS
+************************************************/
+
+/*
 h1::selection,
 h2::selection,
 h3::selection,
@@ -72,72 +157,11 @@ label::selection,
 .btn::selection,
 .navbar::selection,
 .navbar-brand::selection {
-    color: var(--pdf-text-dark);
-    background: #187fcc;
-    text-shadow: 1px 1px 1px #333;
-}
 
-ol,
-ul,
-li {
-    list-style-type: none;
 }
+*/
 
-a,
-a:hover {
-    text-decoration: none;
-    color: #333;
-    -webkit-transition: 0.2s;
-    transition: 0.2s;
-}
 
-h1 {
-    font-size: 50px;
-    color: var(--pdf-text-primary);
-    font-weight: 600;
-}
-
-h2 {
-    font-size: 40px;
-    color: var(--pdf-text-primary);
-    font-weight: 600;
-}
-
-h3 {
-    font-size: 35px;
-    color: var(--pdf-text-primary);
-    font-weight: 600;
-}
-
-h4 {
-    font-size: 30px;
-    color: var(--pdf-text-primary);
-    font-weight: 600;
-}
-
-h5 {
-    font-size: 25px;
-    color: var(--pdf-text-primary);
-    font-weight: 600;
-}
-
-h6 {
-    font-size: 18px;
-    color: var(--pdf-text-primary);
-}
-
-p {
-    font-size: 14px;
-    color: var(--pdf-text-dark);
-}
-
-.ptb-50 {
-    padding: 50px 0px;
-}
-
-.mtb-15 {
-    margin: 15px 0;
-}
 
 /**********************************************
 **** * * * * HEADER MAIN CSS
@@ -226,4 +250,30 @@ p {
     color: rgb(100, 116, 139);
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+/**********************************************
+**** * * * * CLASES CUSTOM CSS
+************************************************/
+
+.ptb-50 {
+    padding: 50px 0px;
+}
+
+.mtb-15 {
+    margin: 15px 0;
+}
+
+.text-1xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.text-slate-500 {
+    color: rgb(100 116 139);
+
+}
+
+.font-bold {
+    font-weight: 700;
 }
