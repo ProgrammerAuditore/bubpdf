@@ -176,7 +176,7 @@ label::selection,
     top: 0;
     width: 100%;
     text-align: left;
-    z-index: 9999;
+    z-index: -999;
 }
 
 .main_header h4 {

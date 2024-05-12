@@ -8,67 +8,63 @@
 
 @section('contenido-principal')
 <div class="datatable-css">
-    <table id="crudTable" ref="crudTable" class="table table-striped">
+    <table id="crudTable" ref="crudTable" class="table table-striped display nowrap" style="width:100%">
         <thead class="table-warning">
             <tr class="datatable-thead-css">
-                <th>Name</th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Position</th>
                 <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
                 <th>Salary</th>
+                <th>Extn.</th>
+                <th>E-mail</th>
+                <th>E-mail</th>
+                <th>E-mail</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Jonas Alexander</td>
-                <td>Developer</td>
-                <td>San Francisco</td>
-                <td>30</td>
-                <td>2010/07/14</td>
-                <td>$86,500</td>
-            </tr>
-            <tr>
-                <td>Shad Decker</td>
-                <td>Regional Director</td>
-                <td>Edinburgh</td>
-                <td>51</td>
-                <td>2008/11/13</td>
-                <td>$183,000</td>
-            </tr>
-            <tr>
-                <td>Michael Bruce</td>
-                <td>Javascript Developer</td>
-                <td>Singapore</td>
-                <td>29</td>
-                <td>2011/06/27</td>
-                <td>$183,000</td>
-            </tr>
-            <tr>
-                <td>Donna Snider</td>
-                <td>Customer Support</td>
-                <td>New York</td>
-                <td>27</td>
-                <td>2011/01/25</td>
-                <td>$112,000</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, excepturi?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th>Name</th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Position</th>
                 <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
                 <th>Salary</th>
+                <th>Extn.</th>
+                <th>E-mail</th>
+                <th>E-mail</th>
+                <th>E-mail</th>
             </tr>
             <tr class="datatable-tfoot-css">
-                <th>Name</th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Position</th>
                 <th>Office</th>
                 <th>Age</th>
                 <th>Start date</th>
                 <th>Salary</th>
+                <th>Extn.</th>
+                <th>E-mail</th>
+                <th>E-mail</th>
+                <th>E-mail</th>
             </tr>
         </tfoot>
     </table>
@@ -80,16 +76,6 @@
     $(document).ready(function() {
         var crudTable = $('#crudTable').DataTable({
             id: 'crudTable',
-            layout: {
-                topStart: {
-                    buttons: [{
-                        text: 'My button',
-                        action: function(e, dt, node, config) {
-                            alert('Button activated');
-                        }
-                    }]
-                }
-            },
             // !! Cambiar el idioma al español
             language: {
                 url: '{{ asset("json/datatables.spanish.json") }}',
@@ -116,43 +102,40 @@
                 },
             ],
             // !! >>> Crear la tabla responsiva
-            responsive: false,
-            /*
-            fixedHeader: true,
+            //responsive: true,
             responsive: {
                 details: {
-                    display: $.fn.dataTable.Responsive.display.modal( {
-                        header: function ( row ) {
+                    display: $.fn.dataTable.Responsive.display.modal({
+                        header: function(row) {
                             // show the content of the first column
                             // as the modal header
-                            // var data = row.data();
-                            // return data[0];
-                            return '';
+                            var data = row.data();
+                            return 'Mostrando información sobre '+ data[0];
                         }
-                    } ),
-                    renderer: function ( api, rowIdx, columns ) {
+                    }),
+                    renderer: function(api, rowIdx, columns) {
 
-                    var data = $.map( columns, function ( col, i ) {
-                        var columnHeading = crudTable.columns().header()[col.columnIndex];
+                        var data = $.map(columns, function(col, i) {
+                            var columnHeading = crudTable.columns().header()[col.columnIndex];
 
-                        // hide columns that have VisibleInModal false
-                        if ($(columnHeading).attr('data-visible-in-modal') == 'false') {
-                            return '';
-                        }
+                            // hide columns that have VisibleInModal false
+                            if ($(columnHeading).attr('data-visible-in-modal') == 'false') {
+                                return '';
+                            }
 
-                        return '<tr data-dt-row="'+col.rowIndex+'" data-dt-column="'+col.columnIndex+'">'+
-                                    '<td style="vertical-align:top; border:none;"><strong>'+col.title.trim()+':'+'<strong></td> '+
-                                    '<td style="padding-left:10px;padding-bottom:10px; border:none;">'+col.data+'</td>'+
+                            return '<tr data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
+                                '<td style="vertical-align:top; border:none;"><strong>' + col.title.trim() + ':' + '<strong></td> ' +
+                                '<td style="padding-left:10px;padding-bottom:10px; border:none;">' + col.data + '</td>' +
                                 '</tr>';
-                    } ).join('');
+                        }).join('');
 
-                    return data ?
-                        $('<table class="table table-striped mb-0">').append( '<tbody>' + data + '</tbody>' ) :
-                        false;
+                        return data ?
+                            $('<table class="table table-striped mb-0">').append('<tbody>' + data + '</tbody>') :
+                            false;
                     },
                 }
             },
-            */
+            fixedHeader: true,
             // !! >>> Exportación de datos  <<<<
             buttons: {
                 buttons: [{
