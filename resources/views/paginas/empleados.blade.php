@@ -103,10 +103,7 @@
             ],
             // !! >>> Crear la tabla responsiva
             scrollX: true,
-            responsive: true,
-            responsive: {
-                details: {
-                    di            /*
+            /*
             responsive: true,
             responsive: {
                 details: {
@@ -142,7 +139,11 @@
             },
             fixedHeader: true,
             */
- '<i class="bi bi-download"></i>&nbsp;&nbsp;Exportar',
+            // !! >>> Exportación de datos  <<<<
+            buttons: {
+                buttons: [{
+                        extend: "collection",
+                        text: '<i class="bi bi-download"></i>&nbsp;&nbsp;Exportar',
                         fade: false,
                         buttons: [{
                                 extend: "csv",
