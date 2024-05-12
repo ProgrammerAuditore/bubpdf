@@ -245,7 +245,7 @@ table#crudTable tr.datatable-tfoot-css th {
 
 .nav-bar-aside-css {
     border-right: solid #e5e7eb 1px;
-    width: 240px;
+    /*width: 240px;*/
     background-color: white !important;
 }
 

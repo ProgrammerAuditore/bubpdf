@@ -9,8 +9,8 @@
 @section('contenido-principal')
 <div class="datatable-css">
     <table id="crudTable" ref="crudTable" class="table table-striped display nowrap" style="width:100%">
-        <thead class="table-warning">
-            <tr class="datatable-thead-css">
+        <thead class="table-dark">
+            <tr>
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Position</th>
@@ -53,7 +53,7 @@
                 <th>E-mail</th>
                 <th>E-mail</th>
             </tr>
-            <tr class="datatable-tfoot-css">
+            <tr>
                 <th>First name</th>
                 <th>Last name</th>
                 <th>Position</th>
@@ -102,7 +102,9 @@
                 },
             ],
             // !! >>> Crear la tabla responsiva
-            //responsive: true,
+            scrollX: true,
+            /*
+            responsive: true,
             responsive: {
                 details: {
                     display: $.fn.dataTable.Responsive.display.modal({
@@ -136,6 +138,7 @@
                 }
             },
             fixedHeader: true,
+            */
             // !! >>> Exportación de datos  <<<<
             buttons: {
                 buttons: [{

@@ -40,7 +40,7 @@
     <div class="d-flex flex-grow-1" style="min-height: 100vh;">
         @include('componentes.navbar_aside')
 
-        <div class="flex-grow-1 m-5">
+        <div class="flex-grow-1 my-5">
             @include('componentes.contenido')
         </div>
     </div>
