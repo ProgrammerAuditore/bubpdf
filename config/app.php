@@ -2,6 +2,11 @@
 
 return [
 
+
+    'app_title' => 'BubPDF',
+    'created_by' => 'ProgrammerAuditore',
+    'description' => 'El sistema de gestión de empleados y sucursales (fake) proporciona una plataforma integral para administrar empleados y sucursales ficticias de múltiples empresas. Con capacidades que incluyen la generación de contratos laborales, acceso a información detallada de empleados y sucursales, así como la descarga de datos financieros, este sistema ofrece herramientas fundamentales para la gestión eficiente de recursos humanos y operativos.',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
