@@ -20,7 +20,7 @@
         </li>
         <li>
             <a href="{{ route('bubpdf.pagina.empleados') }}" class="nav-link">
-                <i class="bi bi-people-fill nav-link-icon-css"></i>
+                <i class="bi bi-people nav-link-icon-css"></i>
                 Empleados
             </a>
         </li>
