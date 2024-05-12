@@ -285,6 +285,35 @@ table#crudTable tr.datatable-tfoot-css th {
 }
 
 /**********************************************
+**** * * * * BOTON FLOTANTE CSS
+************************************************/
+
+.btn-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ce3bbd;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.btn-top:hover {
+    background-color: #b5129a;
+}
+
+.show-btn-top {
+    display: block;
+}
+
+/**********************************************
 **** * * * * CLASES CUSTOM CSS
 ************************************************/
 
@@ -316,9 +345,4 @@ table#crudTable tr.datatable-tfoot-css th {
     font-weight: 700;
 }
 
-#btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-  }
+
