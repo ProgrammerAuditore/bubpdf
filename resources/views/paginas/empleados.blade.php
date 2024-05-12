@@ -120,11 +120,13 @@
                     data: null,
                     searchable: false,
                     render: function (data, type, row) {
-                        return ``;
+                        //return ``;
+                        let url_contrato = "{{ route('bubpdf.pagina.empleados.informacion-empleado', ['id' => '~id~']) }}";
+                        url_contrato = url_contrato.replace('~id~', row.id);
+
                         return `<div>
-                            <button class="btn btn-sm btn-primary txt-white p-2">View</button>
-                            <button class="btn btn-sm btn-warning txt-white p-2">Edit</button>
-                            <button class="btn btn-sm btn-danger txt-white p-2">Delete</button>
+                            <a href="${url_contrato}" class="btn btn-sm btn-primary txt-white p-2">Ver info.</a>
+                            <a href="#" class="btn btn-sm btn-warning txt-white p-2">Ver firma</a>
                         </div>`;
                     }
             },

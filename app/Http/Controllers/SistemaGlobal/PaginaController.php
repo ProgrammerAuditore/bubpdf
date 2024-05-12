@@ -4,6 +4,7 @@ namespace App\Http\Controllers\SistemaGlobal;
 
 use App\Http\Controllers\Controller;
 use App\Models\Empleado;
+use App\Models\InformacionDeEmpleado;
 use Illuminate\Http\Request;
 
 class PaginaController extends Controller
@@ -21,6 +22,25 @@ class PaginaController extends Controller
         //dd($array_empleados);
 
         return view('paginas.empleados')->with(['crudtable_arr' => $array_empleados]);
+    }
+
+    public function informacion_empleado($id)
+    {
+        $info_empleado = InformacionDeEmpleado::findOrFail($id);
+        $empleado = $info_empleado->empleado ?? null;
+        //dd($info_empleado, $empleado);
+
+        // Si no existe información sobre el empleado
+        // se redirecciona hacia atras
+        if(!$info_empleado || !$empleado)
+        {
+            return redirect()->back();
+        }
+
+        return view('subpaginas.informacion-empleado')->with([
+            'info_empleado' => (object) $info_empleado->toArray(),
+            'empleado' => (object) $empleado->toArray(),
+        ]);
     }
 
 }
