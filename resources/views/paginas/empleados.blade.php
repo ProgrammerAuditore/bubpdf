@@ -11,60 +11,44 @@
     <table id="crudTable" ref="crudTable" class="table table-striped display nowrap" style="width:100%">
         <thead class="table-dark">
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-                <th>Extn.</th>
-                <th>E-mail</th>
-                <th>E-mail</th>
-                <th>E-mail</th>
+                <th>Ver</th>
+                <th>Foto</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>RFC</th>
+                <th>Domicilio</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, excepturi?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, culpa?</td>
-            </tr>
         </tbody>
         <tfoot>
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-                <th>Extn.</th>
-                <th>E-mail</th>
-                <th>E-mail</th>
-                <th>E-mail</th>
+                <th data-skip="on">Ver</th>
+                <th>Foto</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>RFC</th>
+                <th>Domicilio</th>
+                <th>Acciones</th>
             </tr>
             <tr>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-                <th>Extn.</th>
-                <th>E-mail</th>
-                <th>E-mail</th>
-                <th>E-mail</th>
+                <th data-skip="on">Ver</th>
+                <th>Foto</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>RFC</th>
+                <th>Domicilio</th>
+                <th>Acciones</th>
             </tr>
         </tfoot>
     </table>
@@ -76,6 +60,7 @@
     $(document).ready(function() {
         var crudTable = $('#crudTable').DataTable({
             id: 'crudTable',
+            data: @json($crudtable_arr),
             // !! Cambiar el idioma al español
             language: {
                 url: '{{ asset("json/datatables.spanish.json") }}',
@@ -101,9 +86,51 @@
                     targets: "_all"
                 },
             ],
+            columns: [
+                {
+                    data: null,
+                    searchable: false,
+                    width: 80,
+                    className: 'd-flex justify-between align-items-center',
+                    render: function (data, type, row) {
+                        return `<div>
+                            <button class="btn btn-sm btn-secondary txt-white p-2">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>`;
+                    }
+                },
+                {
+                    data: 'append_foto_img',
+                    searchable: false,
+                    render: function (data, type, row) {
+                        return `<div>
+                        <img src="${data}" width="60" height="60" />
+                        </div>`;
+                    }
+                },
+                {data: 'nombres', searchable: true},
+                {data: 'apellidos', searchable: true},
+                {data: 'sexo', searchable: true},
+                {data: 'edad', searchable: true},
+                {data: 'correo', searchable: true},
+                {data: 'rfc', searchable: true},
+                {data: 'domicilio', searchable: true},
+                {
+                    data: null,
+                    searchable: false,
+                    render: function (data, type, row) {
+                        return ``;
+                        return `<div>
+                            <button class="btn btn-sm btn-primary txt-white p-2">View</button>
+                            <button class="btn btn-sm btn-warning txt-white p-2">Edit</button>
+                            <button class="btn btn-sm btn-danger txt-white p-2">Delete</button>
+                        </div>`;
+                    }
+            },
+            ],
             // !! >>> Crear la tabla responsiva
-            scrollX: true,
-            /*
+            //scrollX: true,
             responsive: true,
             responsive: {
                 details: {
@@ -112,7 +139,7 @@
                             // show the content of the first column
                             // as the modal header
                             var data = row.data();
-                            return 'Mostrando información sobre '+ data[0];
+                            return 'Mostrando información sobre '+ data['nombres'];
                         }
                     }),
                     renderer: function(api, rowIdx, columns) {
@@ -138,7 +165,6 @@
                 }
             },
             fixedHeader: true,
-            */
             // !! >>> Exportación de datos  <<<<
             buttons: {
                 buttons: [{
@@ -274,6 +300,8 @@
                 "<'row'<'col-sm-12'tr>>" +
                 "<'row mt-2 d-print-none '<'col-sm-12 col-md-8'l><'col-sm-12 col-md-4 'p>>B",
         });
+
+
     });
 </script>
 @endpush

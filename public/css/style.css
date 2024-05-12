@@ -220,12 +220,14 @@ table#crudTable tbody tr:nth-child(odd) td {
     background-color: var(--table-primary);
     color: var(--table-text);
     text-align: left;
+    align-content: center;
 }
 
 table#crudTable tbody tr:nth-child(even) td {
     background-color: var(--table-secondary);
     color: var(--table-text);
     text-align: left;
+    align-content: center;
 }
 
 table#crudTable tr.datatable-tfoot-css th {
@@ -233,6 +235,10 @@ table#crudTable tr.datatable-tfoot-css th {
     color: #FFF;
     text-align: center;
     font-size: 0.7rem;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
+    display: none;
 }
 
 /**********************************************
@@ -335,6 +341,15 @@ table#crudTable tr.datatable-tfoot-css th {
 
 }
 
+.txt-white {
+    color: white !important;
+}
+
+.txt-dark {
+    color: var(--pdf-bg-dark);
+}
+
+
 .font-bold {
     font-weight: 700;
 }
@@ -347,3 +362,4 @@ table#crudTable tr.datatable-tfoot-css th {
 ul.list-unstyled a:hover {
     font-weight: 700;
 }
+
