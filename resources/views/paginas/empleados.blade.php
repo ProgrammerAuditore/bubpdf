@@ -8,7 +8,7 @@
 
 @section('contenido-principal')
 <div class="datatable-css">
-    <table id="crudTable" ref="crudTable" class="table table-striped table-bordered">
+    <table id="crudTable" ref="crudTable" class="table table-striped">
         <thead class="table-warning">
             <tr>
                 <th>Name</th>
@@ -62,7 +62,7 @@
                 <th>Start date</th>
                 <th>Salary</th>
             </tr>
-            <tr>
+            <tr class="datatable-tfoot-css">
                 <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>

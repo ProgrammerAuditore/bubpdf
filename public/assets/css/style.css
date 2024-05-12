@@ -6,6 +6,11 @@
     --pdf-bg-dark: rgb(31, 41, 55) !important;
     --pdf-text-primary: #e5e7eb !important;
     --pdf-text-dark: #333 !important;
+
+    --table-primary:#ffffff !important;
+    --table-secondary:rgba(255, 255, 255, 0.5) !important;
+    --table-text:rgb(0, 0, 0) !important;
+
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(
@@ -161,8 +166,6 @@ label::selection,
 }
 */
 
-
-
 /**********************************************
 **** * * * * HEADER MAIN CSS
 ************************************************/
@@ -201,6 +204,35 @@ label::selection,
 .datatable-css .btn {
     padding: 5px 10px;
     margin: 10px 3px 10px 0;
+}
+
+table#crudTable {
+    border: 1px solid var(--pdf-text-primary) ;
+}
+
+table#crudTable thead tr th {
+    background: var(--pdf-bg-dark) !important;
+    color: #FFF;
+    text-align: center;
+}
+
+table#crudTable tbody tr:nth-child(odd) td {
+    background-color: var(--table-primary);
+    color: var(--table-text);
+    text-align: left;
+}
+
+table#crudTable tbody tr:nth-child(even) td {
+    background-color: var(--table-secondary);
+    color: var(--table-text);
+    text-align: left;
+}
+
+table#crudTable tr.datatable-tfoot-css th {
+    background-color: var(--pdf-bg-dark);
+    color: #FFF;
+    text-align: center;
+    font-size: 0.7rem;
 }
 
 /**********************************************
