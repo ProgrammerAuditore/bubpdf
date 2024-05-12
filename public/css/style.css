@@ -339,10 +339,11 @@ table#crudTable tr.datatable-tfoot-css th {
     font-weight: 700;
 }
 
-.texto-titulo-css
-{
+.texto-titulo-css {
     font-size: 1.7rem;
     font-weight: 700;
 }
 
-
+ul.list-unstyled a:hover {
+    font-weight: 700;
+}

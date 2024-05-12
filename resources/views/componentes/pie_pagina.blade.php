@@ -4,7 +4,7 @@
         <div class="row">
             <!-- Columna de QA -->
             <div class="col-md-4 d-none d-md-block">
-                <h3>Preguntas frecuentes</h3>
+                <h3 class="texto-titulo-css">Preguntas frecuentes</h3>
                 <ul class="list-unstyled">
                     <li><a href="#">¿Cómo usar el sistema?</a></li>
                     <li><a href="#">¿Los datos son reales?</a></li>
@@ -16,13 +16,13 @@
 
             <!-- Columna de Acerca de -->
             <div class="col-md-4 d-none d-md-block">
-                <h3 class="text-lg font-semibold mb-4">Acerca de</h3>
+                <h3 class="texto-titulo-css">Acerca de</h3>
                 <p>{{ config('app.description') ?? 'Sin descripcion' }}</p>
             </div>
 
             <!-- Columna de Redes Sociales -->
             <div class="col-md-4">
-                <h3 class="text-lg font-semibold mb-4">Redes Sociales</h3>
+                <h3 class="texto-titulo-css">Redes Sociales</h3>
                 <ul class="list-unstyled">
                     <li><a href="#">Facebook</a></li>
                     <li><a href="#">Twitter</a></li>
