@@ -210,7 +210,7 @@ table#crudTable {
     border: 1px solid var(--pdf-text-primary) ;
 }
 
-table#crudTable thead tr th {
+table#crudTable tr.datatable-thead-css th {
     background: var(--pdf-bg-dark) !important;
     color: #FFF;
     text-align: center;

@@ -10,7 +10,7 @@
 <div class="datatable-css">
     <table id="crudTable" ref="crudTable" class="table table-striped">
         <thead class="table-warning">
-            <tr>
+            <tr class="datatable-thead-css">
                 <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>
