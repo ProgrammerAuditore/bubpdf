@@ -309,3 +309,9 @@ table#crudTable tr.datatable-tfoot-css th {
 .font-bold {
     font-weight: 700;
 }
+
+.texto-titulo-css
+{
+    font-size: 1.7rem;
+    font-weight: 700;
+}
