@@ -21,34 +21,34 @@
         </div>
     </div>
     <div class="row mb-4">
-            <div class="col-2">
-                <div data-mdb-input-init class="form-outline">
-                    <label class="form-label txt-label-css">Día<span class="campo-requerido-css">*</span></label>
-                    <input type="number" name="Texto2" class="form-control" placeholder="1" value="1" />
-                    <div id="passwordHelpBlock" class="form-text">
+        <div class="col-2">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label txt-label-css">Día<span class="campo-requerido-css">*</span></label>
+                <input type="number" name="Texto2" class="form-control" placeholder="1" value="1" />
+                <div id="passwordHelpBlock" class="form-text">
                     ej. <span class="badge text-bg-dark">1</span>, <span class="badge text-bg-dark">2</span>, etc.
-                </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div data-mdb-input-init class="form-outline">
-                    <label class="form-label txt-label-css">Mes<span class="campo-requerido-css">*</span></label>
-                    <input type="text" name="Texto3" class="form-control" placeholder="Enero" value="Enero" />
-                    <div id="passwordHelpBlock" class="form-text">
-                    ej. <span class="badge text-bg-dark">Enero</span>, <span class="badge text-bg-dark">Febrero</span>, <span class="badge text-bg-dark">Marzo</span>, <span class="badge text-bg-dark">Abril</span>, etc.
-                </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div data-mdb-input-init class="form-outline">
-                    <label class="form-label txt-label-css">Año<span class="campo-requerido-css">*</span></label>
-                    <input type="number" name="Texto4" class="form-control" placeholder="2022" value="1968" />
-                    <div id="passwordHelpBlock" class="form-text">
-                    ej. <span class="badge text-bg-dark">2012</span>, <span class="badge text-bg-dark">2022</span>, etc.
-                </div>
                 </div>
             </div>
         </div>
+        <div class="col-4">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label txt-label-css">Mes<span class="campo-requerido-css">*</span></label>
+                <input type="text" name="Texto3" class="form-control" placeholder="Enero" value="Enero" />
+                <div id="passwordHelpBlock" class="form-text">
+                    ej. <span class="badge text-bg-dark">Enero</span>, <span class="badge text-bg-dark">Febrero</span>, <span class="badge text-bg-dark">Marzo</span>, <span class="badge text-bg-dark">Abril</span>, etc.
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div data-mdb-input-init class="form-outline">
+                <label class="form-label txt-label-css">Año<span class="campo-requerido-css">*</span></label>
+                <input type="number" name="Texto4" class="form-control" placeholder="2022" value="1968" />
+                <div id="passwordHelpBlock" class="form-text">
+                    ej. <span class="badge text-bg-dark">2012</span>, <span class="badge text-bg-dark">2022</span>, etc.
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Información del patrón -->
@@ -181,68 +181,92 @@
 
 @push('scripts')
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         $('#btn-generar-pdf').click(
-        async function(){
-            // Tu código existente para cargar el formulario PDF
-            const {
-                PDFDocument,
-                StandardFonts
-            } = PDFLib;
+            async function() {
+                let pdfBytes = null;
 
-            // Get binary PDF
-            const formUrl = "{{ asset('/formatos-pdf/formato-contrato-de-trabajo.pdf') }}".replace(/\//g, "\\");
-            const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
+                Swal.fire({
+                    title: 'Generando archivo PDF',
+                    html: 'Por favor, espera...',
+                    timer: 0,
+                    timerProgressBar: false,
+                    didOpen: async () => {
+                        Swal.showLoading();
+                        // Tu código existente para cargar el formulario PDF
+                        const {
+                            PDFDocument,
+                            StandardFonts
+                        } = PDFLib;
 
-            // Get binary Logo and Emblem image (PNG necesary)
-            const image01Url = "{{ asset('/images/BubPDF.png') }}".replace(/\//g, "\\");
-            const image01Bytes = await fetch(image01Url).then(res => res.arrayBuffer());
+                        // Get binary PDF
+                        const formUrl = "{{ asset('/formatos-pdf/formato-contrato-de-trabajo.pdf') }}".replace(/\//g, "\\");
+                        const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
 
-            // Load file .PDF
-            const pdfDoc = await PDFDocument.load(formPdfBytes);
+                        // Get binary Logo and Emblem image (PNG necesary)
+                        const image01Url = "{{ asset('/images/BubPDF.png') }}".replace(/\//g, "\\");
+                        const image01Bytes = await fetch(image01Url).then(res => res.arrayBuffer());
 
-            // Get Font Style
-            const helvetica = await pdfDoc.embedFont(StandardFonts.Helvetica);
-            const fontSize = 9;
-            const maxCharacters = 90;
+                        // Load file .PDF
+                        const pdfDoc = await PDFDocument.load(formPdfBytes);
 
-            // Get fill form to file PDF
-            const form = pdfDoc.getForm();
+                        // Get Font Style
+                        const helvetica = await pdfDoc.embedFont(StandardFonts.Helvetica);
+                        const fontSize = 9;
+                        const maxCharacters = 90;
 
-            // Emblem images
-            const logoImage = await pdfDoc.embedPng(image01Bytes);
+                        // Get fill form to file PDF
+                        const form = pdfDoc.getForm();
 
-            const txtInputs = document.querySelectorAll('input');
-            // Iterar sobre los elementos seleccionados
-            txtInputs.forEach((input, index) => {
-                // Obtener el valor del input
-                const value = input.value;
-                const name = input.name;
-                try {
-                    const siField = form.getTextField(name);
-                    siField.defaultUpdateAppearances(helvetica);
-                    siField.setFontSize(fontSize);
-                    siField.setText(value);
-                } catch (err) {}
+                        // Emblem images
+                        const logoImage = await pdfDoc.embedPng(image01Bytes);
+
+                        const txtInputs = document.querySelectorAll('input');
+                        // Iterar sobre los elementos seleccionados
+                        txtInputs.forEach((input, index) => {
+                            // Obtener el valor del input
+                            const value = input.value;
+                            const name = input.name;
+                            try {
+                                const siField = form.getTextField(name);
+                                siField.defaultUpdateAppearances(helvetica);
+                                siField.setFontSize(fontSize);
+                                siField.setText(value);
+                            } catch (err) {}
+                        });
+
+                        // Add logo
+                        const logoImageField = form.getButton('Botón1');
+                        logoImageField.setImage(logoImage);
+
+                        form.flatten();
+
+                        // Serialize the PDFDocument to bytes
+                        pdfBytes = await pdfDoc.save();
+
+                        // Create a Blob from the PDF bytes
+                        const pdfBlob = new Blob([pdfBytes], {
+                            type: 'application/pdf'
+                        });
+
+                        Swal.close();
+                    },
+                    didClose: () => {
+                        Swal.fire({
+                            title: 'PDF Generado',
+                            html: 'Contrato generado exitosamente.',
+                            icon: 'success',
+                            timer: 2700,
+                            timerProgressBar: true,
+                        });
+
+                        // Download the PDF file
+                        download(pdfBytes, 'contrato generado', "application/pdf");
+                    },
+                    showConfirmButton: false,
+                    allowOutsideClick: false
+                });
             });
-
-            // Add logo
-            const logoImageField = form.getButton('Botón1');
-            logoImageField.setImage(logoImage);
-
-            form.flatten();
-
-            // Serialize the PDFDocument to bytes
-            const pdfBytes = await pdfDoc.save();
-
-            // Create a Blob from the PDF bytes
-            const pdfBlob = new Blob([pdfBytes], {
-                type: 'application/pdf'
-            });
-
-            // Download the PDF file
-            download(pdfBytes, 'formato de contrato - generado', "application/pdf");
-        });
     });
 </script>
 @endpush

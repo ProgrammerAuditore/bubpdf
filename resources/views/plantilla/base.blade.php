@@ -24,6 +24,9 @@
     <!-- Download JS -->
     <script src="{{ asset('js/download.min.js') }}"></script>
 
+    <!-- SweetAlert JS -->
+    <script src="{{ asset('js/sweetalert2@11.js') }}"></script>
+
     <!-- Custom -->
     <title>
         BubPDF
