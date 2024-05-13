@@ -121,11 +121,15 @@
                     searchable: false,
                     render: function (data, type, row) {
                         //return ``;
-                        let url_contrato = "{{ route('bubpdf.pagina.empleados.informacion-empleado', ['id' => '~id~']) }}";
+                        let url_informacion = "{{ route('bubpdf.pagina.empleados.informacion-empleado', ['id' => '~id~']) }}";
+                        url_informacion = url_informacion.replace('~id~', row.id);
+
+                        let url_contrato = "{{ route('bubpdf.pagina.empleados.contrato-empleado', ['id' => '~id~']) }}";
                         url_contrato = url_contrato.replace('~id~', row.id);
 
                         return `<div>
-                            <a href="${url_contrato}" class="btn btn-sm btn-primary txt-white p-2">Ver info.</a>
+                            <a href="${url_informacion}" class="btn btn-sm btn-primary txt-white p-2">Ver info.</a>
+                            <a href="${url_contrato}" class="btn btn-sm btn-warning txt-white p-2">Ver contrato</a>
                             <a href="#" class="btn btn-sm btn-warning txt-white p-2">Ver firma</a>
                         </div>`;
                     }
