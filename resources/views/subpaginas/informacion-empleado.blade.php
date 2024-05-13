@@ -1,10 +1,10 @@
 @extends('plantilla.base')
 
-@section('pagina-titulo', 'Contratos')
+@section('pagina-titulo', 'Información de empleado')
 
-@section('contenido-titulo', 'Contratos')
+@section('contenido-titulo', 'Información de empleado')
 
-@section('pagina-descripcion', 'Contratos')
+@section('pagina-descripcion', 'Información de empleado')
 
 @section('contenido-principal')
 <!-- Información personal -->

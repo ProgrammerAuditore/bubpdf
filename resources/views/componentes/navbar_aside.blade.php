@@ -27,7 +27,7 @@
         <li>
             <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
                 <i class="bi bi-files nav-link-icon-css"></i>
-                Contratos
+                Contrato nuevo
             </a>
         </li>
         <li>

@@ -1,10 +1,10 @@
 @extends('plantilla.base')
 
-@section('pagina-titulo', 'Contratos')
+@section('pagina-titulo', 'Contrato nuevo')
 
-@section('contenido-titulo', 'Contratos')
+@section('contenido-titulo', 'Contrato nuevo')
 
-@section('pagina-descripcion', 'Contratos')
+@section('pagina-descripcion', 'Contrato nuevo')
 
 @section('contenido-principal')
 <div class="mb-4">
