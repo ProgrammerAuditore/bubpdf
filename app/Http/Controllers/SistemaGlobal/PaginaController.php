@@ -43,4 +43,9 @@ class PaginaController extends Controller
         ]);
     }
 
+    public function contratos()
+    {
+        return view('paginas.contratos')->with([]);
+    }
+
 }

@@ -367,3 +367,8 @@ ul.list-unstyled a:hover {
     font-size: 1rem;
     font-weight: 700;
 }
+
+.campo-requerido-css {
+    color: red;
+    font-size: 12px;
+}
