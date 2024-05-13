@@ -18,6 +18,12 @@
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
 
+    <!-- PDF-Lib JS -->
+    <script src="{{ asset('js/pdf-lib.min.js') }}"></script>
+
+    <!-- Download JS -->
+    <script src="{{ asset('js/download.min.js') }}"></script>
+
     <!-- Custom -->
     <title>
         BubPDF
