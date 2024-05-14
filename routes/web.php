@@ -31,3 +31,6 @@ Route::get('/empleados/{id}/informacion-empleado', [PaginaController::class, 'in
 
 Route::get('/contratos', [PaginaController::class, 'contratos'])
 ->name('bubpdf.pagina.contratos');
+
+Route::get('/sucursales', [PaginaController::class, 'sucursales'])
+->name('bubpdf.pagina.sucursales');

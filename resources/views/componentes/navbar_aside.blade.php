@@ -31,7 +31,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link">
+            <a href="{{ route('bubpdf.pagina.sucursales') }}" class="nav-link">
                 <i class="bi bi-shop nav-link-icon-css"></i>
                 Sucursales
             </a>

@@ -67,4 +67,9 @@ class PaginaController extends Controller
         return view('paginas.contratos')->with([]);
     }
 
+    public function sucursales()
+    {
+        return view('paginas.sucursales')->with([]);
+    }
+
 }
