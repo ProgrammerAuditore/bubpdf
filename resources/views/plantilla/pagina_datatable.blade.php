@@ -108,9 +108,9 @@
                 searchable: false,
                 render: function(data, type, row) {
                     return `<div>
-                            <button class="btn btn-sm btn-primary txt-white">View</button>
-                            <button class="btn btn-sm btn-warning txt-white">Edit</button>
-                            <button class="btn btn-sm btn-danger txt-white">Delete</button>
+                            <button class="btn btn-sm btn-primary txt-white">Ver</button>
+                            <button class="btn btn-sm btn-warning txt-white">Editar</button>
+                            <button class="btn btn-sm btn-danger txt-white">Eliminar</button>
                         </div>`;
                     return `<select class="form-control">
                             <option disabled selected>Actions</option>
