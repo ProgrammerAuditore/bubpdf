@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SistemaGlobal;
 use App\Http\Controllers\Controller;
 use App\Models\Empleado;
 use App\Models\InformacionDeEmpleado;
+use App\Models\Sucursal;
 use Illuminate\Http\Request;
 
 class PaginaController extends Controller
@@ -69,7 +70,11 @@ class PaginaController extends Controller
 
     public function sucursales()
     {
-        return view('paginas.sucursales')->with([]);
+        $sucursales = Sucursal::get();
+        $array_sucursales = $sucursales->toArray();
+        //dd($array_sucursales);
+
+        return view('paginas.sucursales')->with(['crudtable_arr' => $array_sucursales]);
     }
 
 }

@@ -12,10 +12,14 @@
         <thead class="table-dark">
             <tr>
                 <th>Ver</th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Foto">Foto</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Logotipo">Logotipo</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Gerente">Gerente</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Nombre">Nombre</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="No. teléfono">No. teléfono</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Descripción">Descripción</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Dirección">Dirección</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">No. Teléfono</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">Horario</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">No. Empleados</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">Descripción</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">Estado</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Acciones">Acciones</span></th>
             </tr>
@@ -25,21 +29,29 @@
         <tfoot>
             <tr>
                 <th data-skip="on">Ver</th>
-                <th>Foto</th>
+                <th>Logotipo</th>
+                <th>Gerente</th>
                 <th>Nombre</th>
-                <th>No. teléfono</th>
+                <th>Dirección</th>
+                <th>No. Teléfono</th>
+                <th>Horario</th>
+                <th>No. Empleados</th>
                 <th>Descripción</th>
                 <th>Estado</th>
                 <th data-skip="on">Acciones</th>
             </tr>
             <tr>
-                <th>Ver</th>
-                <th>Foto</th>
+                <th data-skip="on">Ver</th>
+                <th>Logotipo</th>
+                <th>Gerente</th>
                 <th>Nombre</th>
-                <th>No. teléfono</th>
+                <th>Dirección</th>
+                <th>No. Teléfono</th>
+                <th>Horario</th>
+                <th>No. Empleados</th>
                 <th>Descripción</th>
                 <th>Estado</th>
-                <th>Acciones</th>
+                <th data-skip="on">Acciones</th>
             </tr>
         </tfoot>
     </table>
@@ -52,14 +64,7 @@
 <script>
     const configDataTable = {
         id: 'crudTable',
-        data: [{
-            id: 0,
-            foto: 'na',
-            nombre: 'Desconocido',
-            no_tel: '0000-000-0000-000',
-            des: 'Sin descripción',
-            estado: false
-        }],
+        data: @json($crudtable_arr),
         searching: true,
         columns: [{
                 data: null,
@@ -79,28 +84,44 @@
                 searchable: false,
                 render: function(data, type, row) {
                     return `<div>
-                        <img src="/images/empleado.png" width="60" height="60" />
+                        <img src="   https://cdn-icons-png.flaticon.com/512/4634/4634791.png " width="60" height="60" />
                         </div>`;
                 }
+            },
+            {
+                data: 'gerente',
+                searchable: true
             },
             {
                 data: 'nombre',
                 searchable: true
             },
             {
-                data: 'no_tel',
+                data: 'direccion',
                 searchable: true
             },
             {
-                data: 'des',
+                data: 'num_tel',
+                searchable: true
+            },
+            {
+                data: 'horario_atencion',
+                searchable: true
+            },
+            {
+                data: 'num_empleado',
+                searchable: true
+            },
+            {
+                data: 'descripcion',
                 searchable: true
             },
             {
                 data: 'estado',
                 searchable: false,
                 render: function(data, type, row) {
-                    if (data == false) return '<span class="badge bg-danger">Desactivado</span>';
-                    else return '<span class="badge bg-success">Activado</span>';
+                    if (data == 'Cerrado') return '<span class="badge bg-danger">Cerrado</span>';
+                    else return '<span class="badge bg-success">Abierto</span>';
                 }
             },
             {
