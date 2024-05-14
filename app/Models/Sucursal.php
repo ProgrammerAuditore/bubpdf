@@ -22,13 +22,25 @@ class Sucursal extends Model
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
-    // protected $appends = [];
+    protected $appends = ['append_logo'];
 
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
+    public function getAppendLogoAttribute()
+    {
+        $attribute_name = 'logo';
+        $logo = $this->getRawOriginal($attribute_name);
+
+        if (!$logo || !file_exists(public_path($logo))) {
+            $logo = 'images/sucursales/no-icon.png';
+        }
+
+        return $logo;
+    }
 
     /*
     |--------------------------------------------------------------------------

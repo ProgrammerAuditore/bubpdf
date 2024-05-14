@@ -13,8 +13,8 @@
             <tr>
                 <th>Ver</th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Logotipo">Logotipo</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Gerente">Gerente</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Nombre">Nombre</span></th>
+                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Gerente">Gerente</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Dirección">Dirección</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">No. Teléfono</span></th>
                 <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">Horario</span></th>
@@ -30,8 +30,8 @@
             <tr>
                 <th data-skip="on">Ver</th>
                 <th>Logotipo</th>
-                <th>Gerente</th>
                 <th>Nombre</th>
+                <th>Gerente</th>
                 <th>Dirección</th>
                 <th>No. Teléfono</th>
                 <th>Horario</th>
@@ -43,8 +43,8 @@
             <tr>
                 <th data-skip="on">Ver</th>
                 <th>Logotipo</th>
-                <th>Gerente</th>
                 <th>Nombre</th>
+                <th>Gerente</th>
                 <th>Dirección</th>
                 <th>No. Teléfono</th>
                 <th>Horario</th>
@@ -80,20 +80,20 @@
                 }
             },
             {
-                data: 'foto',
+                data: 'append_logo',
                 searchable: false,
                 render: function(data, type, row) {
                     return `<div>
-                        <img src="/images/sucursales/icon-1.png" width="60" height="60" />
+                        <img src="${data}" width="60" height="60" />
                         </div>`;
                 }
             },
             {
-                data: 'gerente',
+                data: 'nombre',
                 searchable: true
             },
             {
-                data: 'nombre',
+                data: 'gerente',
                 searchable: true
             },
             {
