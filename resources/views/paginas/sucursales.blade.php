@@ -84,7 +84,7 @@
                 searchable: false,
                 render: function(data, type, row) {
                     return `<div>
-                        <img src="   https://cdn-icons-png.flaticon.com/512/4634/4634791.png " width="60" height="60" />
+                        <img src="/images/sucursales/icon-1.png" width="60" height="60" />
                         </div>`;
                 }
             },
