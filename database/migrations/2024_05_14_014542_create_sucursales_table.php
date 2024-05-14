@@ -28,7 +28,7 @@ class CreateSucursalesTable extends Migration
             */
             $table->tinyText('estado')->nullable();
             $table->tinyInteger('deleted')->default(0)->nullable();
-            $table->timestamp('deleted_at');
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
         });
     }

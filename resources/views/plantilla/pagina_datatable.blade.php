@@ -1,10 +1,10 @@
 @extends('plantilla.base')
 
-@section('pagina-titulo', 'Sucursales')
+@section('pagina-titulo', 'Página | Datatable JS')
 
-@section('contenido-titulo', 'Sucursales')
+@section('contenido-titulo', 'Página | Datatable JS')
 
-@section('pagina-descripcion', 'Sucursales')
+@section('pagina-descripcion', 'Página | Datatable JS')
 
 @section('contenido-principal')
 <div class="datatable-css">
