@@ -19,15 +19,15 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
-                <i class="bi bi-files nav-link-icon-css"></i>
-                Contrato nuevo
-            </a>
-        </li>
-        <li>
             <a href="{{ route('bubpdf.pagina.sucursales.index') }}" class="nav-link">
                 <i class="bi bi-shop nav-link-icon-css"></i>
                 Sucursales
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
+                <i class="bi bi-files nav-link-icon-css"></i>
+                Contrato
             </a>
         </li>
     </ul>

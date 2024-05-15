@@ -16,8 +16,8 @@
 <div class="mb-4">
     <div class="col-12 mb-2">
         <div data-mdb-input-init class="form-outline">
-            <label class="form-label txt-label-css">Nombre de la empresa<span class="campo-requerido-css">*</span></label>
-            <input type="text" name="Texto1" class="form-control" value="BubPDF" placeholder="BubPDF" required />
+            <label class="form-label txt-label-css">Municipio y/o Estado del contrato<span class="campo-requerido-css">*</span></label>
+            <input type="text" name="Texto1" class="form-control" value="Puerto Vallarta, Jal. Mex." placeholder="Puerto Vallarta, Jal. Mex." readonly />
         </div>
     </div>
     <div class="row mb-4">
