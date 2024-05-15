@@ -77,4 +77,9 @@ class PaginaController extends Controller
         return view('paginas.sucursales')->with(['crudtable_arr' => $array_sucursales]);
     }
 
+    public function actividad_sucursal($id)
+    {
+
+        return view('subpaginas.actividad-sucursal')->with([]);
+    }
 }

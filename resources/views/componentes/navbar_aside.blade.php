@@ -19,7 +19,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('bubpdf.pagina.empleados') }}" class="nav-link">
+            <a href="{{ route('bubpdf.pagina.empleados.index') }}" class="nav-link">
                 <i class="bi bi-people nav-link-icon-css"></i>
                 Empleados
             </a>
@@ -31,7 +31,7 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('bubpdf.pagina.sucursales') }}" class="nav-link">
+            <a href="{{ route('bubpdf.pagina.sucursales.index') }}" class="nav-link">
                 <i class="bi bi-shop nav-link-icon-css"></i>
                 Sucursales
             </a>

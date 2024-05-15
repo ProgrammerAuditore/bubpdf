@@ -29,5 +29,8 @@ Route::prefix('/empleados')->name('bubpdf.pagina.empleados.')->group(function ()
 Route::get('/contratos', [PaginaController::class, 'contratos'])
 ->name('bubpdf.pagina.contratos');
 
-Route::get('/sucursales', [PaginaController::class, 'sucursales'])
-->name('bubpdf.pagina.sucursales');
+// Ruta para Sucursales
+Route::prefix('/sucursales')->name('bubpdf.pagina.sucursales.')->group(function(){
+    Route::get('/', [PaginaController::class, 'sucursales'])->name('index');
+    Route::get('/{id}/actividad-sucursal', [PaginaController::class, 'actividad_sucursal'])->name('actividad-sucursal');
+});
