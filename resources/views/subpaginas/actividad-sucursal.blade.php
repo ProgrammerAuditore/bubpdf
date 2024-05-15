@@ -7,6 +7,61 @@
 @section('pagina-descripcion', 'Actividades de Sucursal')
 
 @section('contenido-principal')
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h1 class="txt-label-css">Información personal
+    </div>
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-1">
+                <div data-mdb-input-init class="form-outline">
+                    <img src="{{ $sucursal->append_logo }}" style="width:60px;height:60px;" />
+                </div>
+            </div>
+            <div class="col-4">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label txt-label-css">Nombre del sucursal</label>
+                    <input type="text" id="form6Example1" class="form-control" placeholder="{{ $sucursal->nombre }}" value="{{ $sucursal->nombre }}" readonly />
+                </div>
+            </div>
+            <div class="col-4">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label txt-label-css">Gerente del sucursal</label>
+                    <input type="text" id="form6Example2" class="form-control" placeholder="{{ $sucursal->gerente }}" value="{{ $sucursal->gerente }}" readonly />
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb-4">
+            <div class="col-4">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label txt-label-css">Dirección del sucursal</label>
+                    <input type="text" id="form6Example1" class="form-control" placeholder="{{ $sucursal->direccion }}" value="{{ $sucursal->direccion }}" readonly />
+                </div>
+            </div>
+            <div class="col-4">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label txt-label-css">Horario de atención</label>
+                    <input type="text" id="form6Example2" class="form-control" placeholder="{{ $sucursal->horario_atencion }}" value="{{ $sucursal->horario_atencion }}" readonly />
+                </div>
+            </div>
+            <div class="col-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label txt-label-css">Estado</label>
+                    <input type="text" id="form6Example1" class="form-control" placeholder="{{ $sucursal->estado }}" value="{{ $sucursal->estado }}" readonly />
+                </div>
+            </div>
+            <div class="col-2">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label txt-label-css">No. Empleado</label>
+                    <input type="text" id="form6Example1" class="form-control" placeholder="{{ $sucursal->num_empleado }}" value="{{ $sucursal->num_empleado }}" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="datatable-css">
     <table id="crudTable" ref="crudTable" class="table table-striped nowrap" style="width:100%">
         <thead class="table-dark">
@@ -118,8 +173,8 @@
             {
                 data: 'estado',
                 searchable: false,
-                render: function(data, type, row){
-                    if(data === 'Finalizado')
+                render: function(data, type, row) {
+                    if (data === 'Finalizado')
                         return `<span class="badge bg-success">Finalizado</span>`;
                     else
                         return `<span class="badge bg-primary">En proceso</span>`;

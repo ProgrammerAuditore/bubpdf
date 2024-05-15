@@ -80,8 +80,18 @@ class PaginaController extends Controller
 
     public function actividad_sucursal($id)
     {
+        $sucursal = Sucursal::findOrFail($id);
         $actividades = ActividadSucursal::where('sucursal_id', $id)->get();
+        //dd($sucursal);
 
-        return view('subpaginas.actividad-sucursal')->with(['crudTable_arr' => $actividades->toArray()]);
+        if(!$sucursal || !$actividades)
+        {
+            return redirect()->back();
+        }
+
+        return view('subpaginas.actividad-sucursal')->with([
+            'sucursal' => (object) $sucursal->toArray(),
+            'crudTable_arr' => $actividades->toArray()
+        ]);
     }
 }
