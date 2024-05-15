@@ -128,11 +128,11 @@
                 data: null,
                 searchable: false,
                 render: function(data, type, row) {
-                    return ``;
+                    let ver_actividad = "{{ route('bubpdf.pagina.sucursales.actividad-sucursal', ['id' => '~id~']) }}";
+                    ver_actividad = ver_actividad.replace('~id~', row.id);
+
                     return `<div>
-                            <button class="btn btn-sm btn-primary txt-white p-2">View</button>
-                            <button class="btn btn-sm btn-warning txt-white p-2">Edit</button>
-                            <button class="btn btn-sm btn-danger txt-white p-2">Delete</button>
+                            <a href="${ver_actividad}" role="button" class="btn btn-sm btn-primary txt-white p-2">Ver actividades</a>
                         </div>`;
                     return `<select class="form-control">
                             <option disabled selected>Actions</option>
