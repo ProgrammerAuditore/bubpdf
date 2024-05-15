@@ -20,14 +20,11 @@ Route::get('/', [PaginaController::class, 'inicio'])
 Route::get('/inicio', [PaginaController::class, 'inicio'])
 ->name('bubpdf.pagina.inicio');
 
-Route::get('/empleados', [PaginaController::class, 'empleados'])
-->name('bubpdf.pagina.empleados');
-
-Route::get('/empleados/{id}/contrato-empleado', [PaginaController::class, 'contrato_empleado'])
-->name('bubpdf.pagina.empleados.contrato-empleado');
-
-Route::get('/empleados/{id}/informacion-empleado', [PaginaController::class, 'informacion_empleado'])
-->name('bubpdf.pagina.empleados.informacion-empleado');
+Route::prefix('/empleados')->name('bubpdf.pagina.empleados.')->group(function () {
+    Route::get('/', [PaginaController::class, 'empleados'])->name('index');
+    Route::get('/{id}/contrato-empleado', [PaginaController::class, 'contrato_empleado'])->name('contrato-empleado');
+    Route::get('/{id}/informacion-empleado', [PaginaController::class, 'informacion_empleado'])->name('informacion-empleado');
+});
 
 Route::get('/contratos', [PaginaController::class, 'contratos'])
 ->name('bubpdf.pagina.contratos');
