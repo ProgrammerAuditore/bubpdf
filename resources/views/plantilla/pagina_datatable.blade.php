@@ -107,12 +107,15 @@
                 data: null,
                 searchable: false,
                 render: function(data, type, row) {
-                    return `<div>
-                            <button class="btn btn-sm btn-primary txt-white">Ver</button>
-                            <button class="btn btn-sm btn-warning txt-white">Editar</button>
-                            <button class="btn btn-sm btn-danger txt-white">Eliminar</button>
+                    return ``;
+                    return `
+                        <div>
+                            <button class="btn btn-sm btn-primary txt-white p-2">View</button>
+                            <button class="btn btn-sm btn-warning txt-white p-2">Edit</button>
+                            <button class="btn btn-sm btn-danger txt-white p-2">Delete</button>
                         </div>`;
-                    return `<select class="form-control">
+                    return `
+                        <select class="form-control">
                             <option disabled selected>Actions</option>
                             <option>View</option>
                             <option>Edit</option>
