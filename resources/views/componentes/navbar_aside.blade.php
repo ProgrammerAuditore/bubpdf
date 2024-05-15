@@ -13,12 +13,6 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link">
-                <i class="bi bi-buildings nav-link-icon-css"></i>
-                Empresas
-            </a>
-        </li>
-        <li>
             <a href="{{ route('bubpdf.pagina.empleados.index') }}" class="nav-link">
                 <i class="bi bi-people nav-link-icon-css"></i>
                 Empleados
