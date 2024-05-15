@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\SistemaGlobal;
 
 use App\Http\Controllers\Controller;
+use App\Models\ActividadSucursal;
 use App\Models\Empleado;
 use App\Models\InformacionDeEmpleado;
 use App\Models\Sucursal;
@@ -79,7 +80,8 @@ class PaginaController extends Controller
 
     public function actividad_sucursal($id)
     {
+        $actividades = ActividadSucursal::where('sucursal_id', $id)->get();
 
-        return view('subpaginas.actividad-sucursal')->with([]);
+        return view('subpaginas.actividad-sucursal')->with(['crudTable_arr' => $actividades->toArray()]);
     }
 }

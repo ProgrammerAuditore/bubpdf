@@ -12,12 +12,16 @@
         <thead class="table-dark">
             <tr>
                 <th>Ver</th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Foto">Foto</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Nombre">Nombre</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="No. teléfono">No. teléfono</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Descripción">Descripción</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Estado">Estado</span></th>
-                <th><span data-bs-toggle="tooltip" data-bs-placement="top" title="Acciones">Acciones</span></th>
+                <th>No. Empleado</th>
+                <th>Nombre Empleado</th>
+                <th>Correo Empleado</th>
+                <th>Tel. Empleado</th>
+                <th>Actividad</th>
+                <th>Detalles</th>
+                <th>Autorizado Por</th>
+                <th>Fecha/Hora Inicio</th>
+                <th>Fecha/Hora Final</th>
+                <th>Estado</th>
             </tr>
         </thead>
         <tbody>
@@ -25,21 +29,29 @@
         <tfoot>
             <tr>
                 <th data-skip="on">Ver</th>
-                <th>Foto</th>
-                <th>Nombre</th>
-                <th>No. teléfono</th>
-                <th>Descripción</th>
+                <th>No. Empleado</th>
+                <th>Nombre Empleado</th>
+                <th>Correo Empleado</th>
+                <th>Tel. Empleado</th>
+                <th>Actividad</th>
+                <th>Detalles</th>
+                <th>Autorizado Por</th>
+                <th>Fecha/Hora Inicio</th>
+                <th>Fecha/Hora Final</th>
                 <th>Estado</th>
-                <th data-skip="on">Acciones</th>
             </tr>
             <tr>
                 <th>Ver</th>
-                <th>Foto</th>
-                <th>Nombre</th>
-                <th>No. teléfono</th>
-                <th>Descripción</th>
+                <th>No. Empleado</th>
+                <th>Nombre Empleado</th>
+                <th>Correo Empleado</th>
+                <th>Tel. Empleado</th>
+                <th>Actividad</th>
+                <th>Detalles</th>
+                <th>Autorizado Por</th>
+                <th>Fecha/Hora Inicio</th>
+                <th>Fecha/Hora Final</th>
                 <th>Estado</th>
-                <th>Acciones</th>
             </tr>
         </tfoot>
     </table>
@@ -52,14 +64,7 @@
 <script>
     const configDataTable = {
         id: 'crudTable',
-        data: [{
-            id: 0,
-            foto: 'na',
-            nombre: 'Desconocido',
-            no_tel: '0000-000-0000-000',
-            des: 'Sin descripción',
-            estado: false
-        }],
+        data: @json($crudTable_arr),
         searching: true,
         columns: [{
                 data: null,
@@ -75,52 +80,49 @@
                 }
             },
             {
-                data: 'foto',
-                searchable: false,
-                render: function(data, type, row) {
-                    return `<div>
-                        <img src="/images/empleado.png" width="60" height="60" />
-                        </div>`;
-                }
-            },
-            {
-                data: 'nombre',
+                data: 'no_empleado',
                 searchable: true
             },
             {
-                data: 'no_tel',
+                data: 'nombre_responsable',
                 searchable: true
             },
             {
-                data: 'des',
+                data: 'correo_responsable',
+                searchable: true
+            },
+            {
+                data: 'tel_responsable',
+                searchable: true
+            },
+            {
+                data: 'actividad',
+                searchable: true
+            },
+            {
+                data: 'detalles',
+                searchable: true
+            },
+            {
+                data: 'autorizado_por',
+                searchable: true
+            },
+            {
+                data: 'fecha_inicio',
+                searchable: true
+            },
+            {
+                data: 'fecha_final',
                 searchable: true
             },
             {
                 data: 'estado',
                 searchable: false,
-                render: function(data, type, row) {
-                    if (data == false) return '<span class="badge bg-danger">Desactivado</span>';
-                    else return '<span class="badge bg-success">Activado</span>';
-                }
-            },
-            {
-                data: null,
-                searchable: false,
-                render: function(data, type, row) {
-                    return ``;
-                    return `
-                        <div>
-                            <button class="btn btn-sm btn-primary txt-white p-2">View</button>
-                            <button class="btn btn-sm btn-warning txt-white p-2">Edit</button>
-                            <button class="btn btn-sm btn-danger txt-white p-2">Delete</button>
-                        </div>`;
-                    return `
-                        <select class="form-control">
-                            <option disabled selected>Actions</option>
-                            <option>View</option>
-                            <option>Edit</option>
-                            <option>Delete</option>
-                        </select>`;
+                render: function(data, type, row){
+                    if(data === 'Finalizado')
+                        return `<span class="badge bg-success">Finalizado</span>`;
+                    else
+                        return `<span class="badge bg-primary">En proceso</span>`;
                 }
             },
         ],
