@@ -30,5 +30,17 @@
                 Contrato
             </a>
         </li>
+        <li>
+            <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
+                <i class="bi bi-files nav-link-icon-css"></i>
+                Carta de recomendación
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
+                <i class="bi bi-files nav-link-icon-css"></i>
+                Convenios
+            </a>
+        </li>
     </ul>
 </div>
