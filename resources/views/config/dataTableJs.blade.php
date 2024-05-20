@@ -46,7 +46,7 @@
             */
             // !! Cambiar el idioma al español
             language: {
-                url: '{{ asset("json/datatables.spanish.json") }}',
+                url: '{{ secure_asset("json/datatables.spanish.json") }}',
             },
             searching: true,
             autoWidth: true,

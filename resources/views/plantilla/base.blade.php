@@ -12,24 +12,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Bootstrap JS -->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ secure_asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ secure_asset('js/popper.min.js') }}"></script>
 
     <!-- DataTables CSS -->
-    <link rel="stylesheet" href="{{ asset('css/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/datatables.min.css') }}">
 
     <!-- PDF-Lib JS -->
-    <script src="{{ asset('js/pdf-lib.min.js') }}"></script>
+    <script src="{{ secure_asset('js/pdf-lib.min.js') }}"></script>
 
     <!-- Download JS -->
-    <script src="{{ asset('js/download.min.js') }}"></script>
+    <script src="{{ secure_asset('js/download.min.js') }}"></script>
 
     <!-- SweetAlert JS -->
-    <script src="{{ asset('js/sweetalert2@11.js') }}"></script>
+    <script src="{{ secure_asset('js/sweetalert2@11.js') }}"></script>
 
     <!-- Custom -->
     <title>
@@ -43,7 +43,7 @@
     <meta content="Author" name="ProgrammerAuditore">
     <link href="images/favicon.png" rel="icon">
     <link href="images/favicon.png" rel="apple-touch-icon">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
 
 </head>
 
@@ -66,11 +66,11 @@
     @include('componentes.pie_pagina')
 
     <!-- JavaScript Files -->
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('js/datatables.min.js') }}"></script>
-    <script src="{{ asset('js/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('js/vfs_fonts.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ secure_asset('js/jquery.dataTables.js') }}"></script>
+    <script src="{{ secure_asset('js/datatables.min.js') }}"></script>
+    <script src="{{ secure_asset('js/pdfmake.min.js') }}"></script>
+    <script src="{{ secure_asset('js/vfs_fonts.js') }}"></script>
 
 
 

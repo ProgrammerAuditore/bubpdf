@@ -199,19 +199,19 @@
                         } = PDFLib;
 
                         // Get binary PDF
-                        const formUrl = "{{ asset('/formatos-pdf/formato-contrato-de-trabajo-fill-firma.pdf') }}".replace(/\//g, "\\");
+                        const formUrl = "{{ secure_asset('/formatos-pdf/formato-contrato-de-trabajo-fill-firma.pdf') }}".replace(/\//g, "\\");
                         const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
 
                         // Get binary Logo and Emblem image (PNG necesary)
-                        const image01Url = "{{ asset('/images/BubPDF.png') }}".replace(/\//g, "\\");
+                        const image01Url = "{{ secure_asset('/images/BubPDF.png') }}".replace(/\//g, "\\");
                         const image01Bytes = await fetch(image01Url).then(res => res.arrayBuffer());
 
                         // Get binary Logo and Emblem image (PNG necesary)
-                        const image02Url = "{{ asset('/images/firma_empresa.png') }}".replace(/\//g, "\\");
+                        const image02Url = "{{ secure_asset('/images/firma_empresa.png') }}".replace(/\//g, "\\");
                         const image02Bytes = await fetch(image02Url).then(res => res.arrayBuffer());
 
                         // Get binary Logo and Emblem image (PNG necesary)
-                        const image03Url = "{{ asset('/images/firma_empleado.png') }}".replace(/\//g, "\\");
+                        const image03Url = "{{ secure_asset('/images/firma_empleado.png') }}".replace(/\//g, "\\");
                         const image03Bytes = await fetch(image03Url).then(res => res.arrayBuffer());
 
                         // Load file .PDF

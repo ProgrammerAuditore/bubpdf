@@ -200,11 +200,11 @@
                         } = PDFLib;
 
                         // Get binary PDF
-                        const formUrl = "{{ asset('/formatos-pdf/formato-contrato-de-trabajo.pdf') }}".replace(/\//g, "\\");
+                        const formUrl = "{{ secure_asset('/formatos-pdf/formato-contrato-de-trabajo.pdf') }}".replace(/\//g, "\\");
                         const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer());
 
                         // Get binary Logo and Emblem image (PNG necesary)
-                        const image01Url = "{{ asset('/images/BubPDF.png') }}".replace(/\//g, "\\");
+                        const image01Url = "{{ secure_asset('/images/BubPDF.png') }}".replace(/\//g, "\\");
                         const image01Bytes = await fetch(image01Url).then(res => res.arrayBuffer());
 
                         // Load file .PDF
