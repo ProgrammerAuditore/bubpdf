@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 nav-bar-aside-css">
+<div class="d-flex flex-column flex-shrink-0 p-3 nav-bar-aside-css d-none">
     <ul class="nav nav-pills flex-column mb-auto" style="padding-top: 2rem; padding-bottom: 2rem;">
         <li class="nav-item">
             <a href="{{ route('bubpdf.pagina.index') }}" class="nav-link" aria-current="page">

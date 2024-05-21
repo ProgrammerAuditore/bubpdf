@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <!-- JQuery -->
+    <script src="{{ secure_asset('js/jquery-3.6.0.min.js') }}"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -24,6 +27,10 @@
 
     <!-- PDF-Lib JS -->
     <script src="{{ secure_asset('js/pdf-lib.min.js') }}"></script>
+
+    <!-- Chart JS -->
+    <script src="{{ secure_asset('js/chart.js') }}"></script>
+    <script src="{{ secure_asset('js/chart-utils.min.js') }}"></script>
 
     <!-- Download JS -->
     <script src="{{ secure_asset('js/download.min.js') }}"></script>
@@ -66,7 +73,7 @@
     @include('componentes.pie_pagina')
 
     <!-- JavaScript Files -->
-    <script src="{{ secure_asset('js/jquery-3.6.0.min.js') }}"></script>
+
     <script src="{{ secure_asset('js/jquery.dataTables.js') }}"></script>
     <script src="{{ secure_asset('js/datatables.min.js') }}"></script>
     <script src="{{ secure_asset('js/pdfmake.min.js') }}"></script>
