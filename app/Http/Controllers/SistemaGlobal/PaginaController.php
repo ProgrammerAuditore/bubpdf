@@ -17,6 +17,11 @@ class PaginaController extends Controller
         return view('paginas.inicio');
     }
 
+    public function panel()
+    {
+        return view('paginas.panel');
+    }
+
     public function empleados()
     {
         $empleados = Empleado::get();

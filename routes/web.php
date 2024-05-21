@@ -20,6 +20,9 @@ Route::get('/', [PaginaController::class, 'inicio'])
 Route::get('/inicio', [PaginaController::class, 'inicio'])
 ->name('bubpdf.pagina.inicio');
 
+Route::get('/panel', [PaginaController::class, 'panel'])
+->name('bubpdf.pagina.panel');
+
 Route::prefix('/empleados')->name('bubpdf.pagina.empleados.')->group(function () {
     Route::get('/', [PaginaController::class, 'empleados'])->name('index');
     Route::get('/{id}/contrato-empleado', [PaginaController::class, 'contrato_empleado'])->name('contrato-empleado');

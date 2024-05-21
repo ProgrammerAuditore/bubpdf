@@ -7,7 +7,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="nav-link">
+            <a href="{{ route('bubpdf.pagina.panel') }}" class="nav-link">
                 <i class="bi bi-pie-chart nav-link-icon-css"></i>
                 Panel
             </a>
