@@ -251,7 +251,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
 .nav-bar-aside-css {
     border-right: solid #e5e7eb 1px;
-    /*width: 240px;*/
+    width: 190px;
     background-color: white !important;
 }
 

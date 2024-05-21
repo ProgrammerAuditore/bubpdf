@@ -55,7 +55,7 @@
 
     @include('componentes.main_header')
 
-    <div class="d-flex flex-grow-1" style="min-height: 100vh;">
+    <div class="d-flex">
         @include('componentes.navbar_aside')
 
         <div class="flex-grow-1 my-5">
