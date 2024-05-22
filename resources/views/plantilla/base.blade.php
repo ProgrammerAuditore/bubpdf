@@ -31,6 +31,7 @@
     <!-- Chart JS -->
     <script src="{{ secure_asset('js/chart.js') }}"></script>
     <script src="{{ secure_asset('js/chart-utils.min.js') }}"></script>
+    <script src="{{ secure_asset('js/chartjs-plugin-doughnutlabel.min.js') }}"></script>
 
     <!-- Download JS -->
     <script src="{{ secure_asset('js/download.min.js') }}"></script>
