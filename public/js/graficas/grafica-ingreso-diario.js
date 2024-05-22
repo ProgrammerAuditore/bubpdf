@@ -1,33 +1,42 @@
-function initGraficaIngresoMensuales(ctx) {
+function initGraficaIngresoDiario(ctx) {
     const Utils = ChartUtils.init();
     // const ctx = document.getElementById('myChart');
 
-    const DATA_COUNT = 31;
+    const DATA_COUNT = 7;
     const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
 
     const data = {
         labels: generateDates(DATA_COUNT), // Utiliza las fechas generadas y formateadas
         datasets: [{
-            type: 'bar',
             label: 'PopCup',
             backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
             borderColor: Utils.CHART_COLORS.red,
             fill: false,
             data: Utils.numbers(NUMBER_CFG),
         }, {
-            type: 'bar',
             label: 'MarketCup',
             backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
             borderColor: Utils.CHART_COLORS.blue,
             fill: false,
             data: Utils.numbers(NUMBER_CFG),
         }, {
-            type: 'line',
-            label: 'Año anterior',
+            label: 'LoopCup',
             backgroundColor: Utils.transparentize(Utils.CHART_COLORS.green, 0.5),
             borderColor: Utils.CHART_COLORS.green,
             fill: false,
-            data: Utils.numbers(NUMBER_CFG),
+            data: [{
+                x: formatDate(new Date()), // Utiliza la función formatDate para cada punto de datos
+                y: Utils.rand(0, 100)
+            }, {
+                x: formatDate(new Date(new Date().setDate(new Date().getDate() + 5))),
+                y: Utils.rand(0, 100)
+            }, {
+                x: formatDate(new Date(new Date().setDate(new Date().getDate() + 7))),
+                y: Utils.rand(0, 100)
+            }, {
+                x: formatDate(new Date(new Date().setDate(new Date().getDate() + 15))),
+                y: Utils.rand(0, 100)
+            }],
         }]
     };
 
@@ -41,7 +50,7 @@ function initGraficaIngresoMensuales(ctx) {
                 legend: true,
                 title: {
                     display: true,
-                    text: 'Ingreso mensual'
+                    text: 'Ingreso diario'
                 },
             },
             scales: {
@@ -79,4 +88,3 @@ function generateDates(days) {
     }
     return dates;
 }
-
