@@ -29,7 +29,7 @@ function initGraficaDonas(ctx) {
                     enabled: false // Deshabilitar los tooltips
                 },
                 title: {
-                    display: true,
+                    display: false,
                     text: '% de Stock disponible'
                 },
             },

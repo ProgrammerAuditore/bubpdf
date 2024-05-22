@@ -8,13 +8,39 @@
 
 @section('contenido-principal')
 <div class="row center-items mb-4">
-    <div class="col-sm-12 mb-sm-4 col-md-9">
+    <div class="col-sm-12 col-md-3">
+        <div class="">
+            <canvas id="myDona-n1" class="" style="transform:scale(0.5);"></canvas>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <div class="">
+            <canvas id="myDona-n2" class=""  style="transform:scale(0.5);"></canvas>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <div class="">
+            <canvas id="myDona-n3" class=""  style="transform:scale(0.5);"></canvas>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+    </div>
+    <div class="col-sm-12 col-md-3">
+        <div class="">
+            <canvas id="myDona-n4" class=""  style="transform:scale(0.5);"></canvas>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+    </div>
+</div>
+
+<div class="row center-items mb-4">
+    <div class="col-sm-12 mb-sm-4 col-md-8">
         <div style="width: 100%; height: 400px;">
             <canvas id="grafica-ingreso-diario" class="finanz-chart-render"></canvas>
         </div>
     </div>
-
-    <div class="col-sm-12 mb-sm-4 col-md-3">
+    <div class="col-sm-12 mb-sm-4 col-md-4">
         <div class="finanz-chart-box">
             <canvas id="myChart" class="finanz-chart-render"></canvas>
         </div>
@@ -22,12 +48,7 @@
 </div>
 
 <div class="row center-items mb-4">
-    <div class="col-sm-12 col-md-3">
-        <div class="finanz-chart-box">
-            <canvas id="myDona" class="finanz-chart-render"></canvas>
-        </div>
-    </div>
-    <div class="col-sm-12 mb-sm-4 col-md-9">
+    <div class="col-sm-12 mb-sm-4 col-md-12">
         <div style="width: 100%; height: 400px;">
             <canvas id="grafica-ingreso-mensuales" class="finanz-chart-render"></canvas>
         </div>
@@ -43,7 +64,10 @@
         initGraficaIngresoMensuales($('#grafica-ingreso-mensuales'));
         initGraficaIngresoDiario($('#grafica-ingreso-diario'));
         initGraficaBalanzaAnual($('#myChart'));
-        initGraficaDonas($('#myDona'));
+        initGraficaDonas($('#myDona-n1'));
+        initGraficaDonas($('#myDona-n2'));
+        initGraficaDonas($('#myDona-n3'));
+        initGraficaDonas($('#myDona-n4'));
     });
 </script>
 @endsection
