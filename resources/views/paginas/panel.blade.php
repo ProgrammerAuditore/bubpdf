@@ -72,10 +72,10 @@
         initGraficaIngresoMensuales($('#grafica-ingreso-mensuales'));
         initGraficaIngresoDiario($('#grafica-ingreso-diario'));
         initGraficaBalanzaAnual($('#myChart'));
-        initGraficaDonas($('#myDona-n1'));
-        initGraficaDonas($('#myDona-n2'));
-        initGraficaDonas($('#myDona-n3'));
-        initGraficaDonas($('#myDona-n4'));
+        initGraficaDonas($('#myDona-n1'), 75, 'rgba(43, 45, 66, 1)');
+        initGraficaDonas($('#myDona-n2'), 68, 'rgba(0, 52, 89, 1)');
+        initGraficaDonas($('#myDona-n3'), 92, 'rgba(76, 95, 107, 1)');
+        initGraficaDonas($('#myDona-n4'), 76, 'rgba(166, 61, 64, 1)');
     });
 </script>
 @endsection

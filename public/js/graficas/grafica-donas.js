@@ -1,13 +1,13 @@
-function initGraficaDonas(ctx) {
+function initGraficaDonas(ctx, porcentaje, colorFondo) {
     const Utils = ChartUtils.init();
 
     // Datos y configuraciones de la gráfica
     const data = {
         labels: ['Completed', 'Remaining'],
         datasets: [{
-            data: [75, 25], // Porcentaje completado y restante
+            data: [porcentaje, (100 - porcentaje)], // Porcentaje completado y restante
             backgroundColor: [
-                'rgba(75, 192, 192, 1)',
+                colorFondo,
                 'rgba(201, 203, 207, 1)'
             ],
             borderWidth: 0 // Sin bordes
@@ -21,7 +21,7 @@ function initGraficaDonas(ctx) {
             responsive: true,
             maintainAspectRatio: false,
             aspectRatio: 1,
-            cutout: '85%', // Ajuste del grosor de la dona
+            cutout: '80%', // Ajuste del grosor de la dona
             plugins: {
                 legend: {
                     display: false // Ocultar la leyenda
@@ -52,9 +52,9 @@ function initGraficaDonas(ctx) {
                 ctx.textAlign = 'middle';
                 ctx.textBaseline = 'middle';
                 ctx.font = fontSize + "em sans-serif";
-                ctx.fillStyle = 'black'; // Color del texto en el centro de la dona
+                ctx.fillStyle = colorFondo; // Color del texto en el centro de la dona
 
-                var text = "75%",
+                var text = porcentaje + "%",
                     textX = Math.round((width - ctx.measureText(text).width) / 2),
                     textY = height / 2 + 5;
 
