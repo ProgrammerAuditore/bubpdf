@@ -20,7 +20,8 @@ function initGraficaDonas(ctx) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            cutout: '94%', // Ajuste del grosor de la dona
+            aspectRatio: 1,
+            cutout: '85%', // Ajuste del grosor de la dona
             plugins: {
                 legend: {
                     display: false // Ocultar la leyenda
@@ -32,6 +33,11 @@ function initGraficaDonas(ctx) {
                     display: false,
                     text: '% de Stock disponible'
                 },
+            },
+            layout: {
+                padding: 0,
+                margin: 0,
+                boder: 0,
             },
         },
         plugins: [{

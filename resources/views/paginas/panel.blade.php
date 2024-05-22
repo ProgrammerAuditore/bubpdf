@@ -8,29 +8,45 @@
 
 @section('contenido-principal')
 <div class="row center-items mb-4">
-    <div class="col-sm-12 col-md-3">
-        <div class="">
-            <canvas id="myDona-n1" class="" style="transform:scale(0.5);"></canvas>
+    <div class="col-sm-12 chartDonaCenter col-md-3">
+        <div class="chartDonaCard">
+            <div class="chartDonaBox">
+                <canvas id="myDona-n1"></canvas>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     </div>
-    <div class="col-sm-12 col-md-3">
-        <div class="">
-            <canvas id="myDona-n2" class=""  style="transform:scale(0.5);"></canvas>
+    <div class="col-sm-12 chartDonaCenter col-md-3">
+        <div class="chartDonaCard">
+            <div class="chartDonaBox">
+                <canvas id="myDona-n2"></canvas>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
     </div>
-    <div class="col-sm-12 col-md-3">
-        <div class="">
-            <canvas id="myDona-n3" class=""  style="transform:scale(0.5);"></canvas>
+    <div class="col-sm-12 chartDonaCenter col-md-3">
+        <div class="chartDonaCard">
+            <div class="chartDonaBox">
+                <canvas id="myDona-n3"></canvas>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
     </div>
-    <div class="col-sm-12 col-md-3">
-        <div class="">
-            <canvas id="myDona-n4" class=""  style="transform:scale(0.5);"></canvas>
+    <div class="col-sm-12 chartDonaCenter col-md-3">
+        <div class="chartDonaCard">
+            <div class="chartDonaBox">
+                <canvas id="myDona-n4"></canvas>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nam commodi reiciendis eligendi maxime? Facilis aliquid a dicta fuga saepe omnis sit fugit atque, dignissimos, deleniti officia eligendi! Quas, minima?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</div>
+
+<div class="row center-items mb-4">
+    <div class="col-sm-12 mb-sm-4 col-md-12">
+        <div style="width: 100%; height: 400px;">
+            <canvas id="grafica-ingreso-mensuales" class="finanz-chart-render"></canvas>
+        </div>
     </div>
 </div>
 
@@ -43,14 +59,6 @@
     <div class="col-sm-12 mb-sm-4 col-md-4">
         <div class="finanz-chart-box">
             <canvas id="myChart" class="finanz-chart-render"></canvas>
-        </div>
-    </div>
-</div>
-
-<div class="row center-items mb-4">
-    <div class="col-sm-12 mb-sm-4 col-md-12">
-        <div style="width: 100%; height: 400px;">
-            <canvas id="grafica-ingreso-mensuales" class="finanz-chart-render"></canvas>
         </div>
     </div>
 </div>
