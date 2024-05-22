@@ -1,4 +1,4 @@
-function initGraficaMeses(ctx) {
+function initGraficaBalanzaAnual(ctx) {
     const Utils = ChartUtils.init();
     //const ctx = document.getElementById('myChart');
 
@@ -41,7 +41,7 @@ function initGraficaMeses(ctx) {
                 legend: false,
                 title: {
                     display: true,
-                    text: 'Chart.js Horizontal Bar Chart'
+                    text: 'Balanza anual'
                 },
 
             },

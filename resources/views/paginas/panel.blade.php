@@ -15,11 +15,10 @@
     </div>
 </div>
 
-<script src="../../js/graficas/grafica-meses.js"></script>
+<script src="../../js/graficas/grafica-balanza-anual.js"></script>
 <script>
     $(document).ready(function(){
-
-        initGraficaMeses($('#myChart'));
+        initGraficaBalanzaAnual($('#myChart'));
     });
 </script>
 @endsection
