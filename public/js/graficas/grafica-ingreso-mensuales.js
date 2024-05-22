@@ -50,7 +50,7 @@ function initGraficaIngresoMensuales(ctx) {
                 legend: true,
                 title: {
                     display: true,
-                    text: 'Ingreso mensuales'
+                    text: 'Ingreso diario'
                 },
             },
             scales: {
