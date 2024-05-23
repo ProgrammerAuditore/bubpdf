@@ -14,7 +14,7 @@
                 <canvas id="myDona-n1"></canvas>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>% de productos</p>
     </div>
     <div class="col-sm-12 chartDonaCenter col-md-3">
         <div class="chartDonaCard">
@@ -22,7 +22,7 @@
                 <canvas id="myDona-n2"></canvas>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <p>% de almacén</p>
     </div>
     <div class="col-sm-12 chartDonaCenter col-md-3">
         <div class="chartDonaCard">
@@ -30,7 +30,7 @@
                 <canvas id="myDona-n3"></canvas>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <p>% de tareas</p>
     </div>
     <div class="col-sm-12 chartDonaCenter col-md-3">
         <div class="chartDonaCard">
@@ -38,7 +38,7 @@
                 <canvas id="myDona-n4"></canvas>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>% de empleados</p>
     </div>
 </div>
 
@@ -72,10 +72,10 @@
         initGraficaIngresoMensuales($('#grafica-ingreso-mensuales'));
         initGraficaIngresoDiario($('#grafica-ingreso-diario'));
         initGraficaBalanzaAnual($('#myChart'));
-        initGraficaDonas($('#myDona-n1'), 75, 'rgba(43, 45, 66, 1)');
-        initGraficaDonas($('#myDona-n2'), 68, 'rgba(0, 52, 89, 1)');
-        initGraficaDonas($('#myDona-n3'), 92, 'rgba(76, 95, 107, 1)');
-        initGraficaDonas($('#myDona-n4'), 76, 'rgba(166, 61, 64, 1)');
+        initGraficaDonas($('#myDona-n1'), 45, 'rgba(43, 45, 66, 1)');
+        initGraficaDonas($('#myDona-n2'), 62, 'rgba(0, 52, 89, 1)');
+        initGraficaDonas($('#myDona-n3'), 54, 'rgba(76, 95, 107, 1)');
+        initGraficaDonas($('#myDona-n4'), 98, 'rgba(166, 61, 64, 1)');
     });
 </script>
 @endsection
