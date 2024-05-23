@@ -63,10 +63,19 @@
     </div>
 </div>
 
+<div class="row center-items mb-4">
+    <div class="col-sm-12 mb-sm-4 col-md-6">
+        <div style="width: 100%; height: 400px;">
+            <canvas id="grafica-sucursales" class="finanz-chart-render"></canvas>
+        </div>
+    </div>
+</div>
+
 <script src="../../js/graficas/grafica-balanza-anual.js"></script>
 <script src="../../js/graficas/grafica-ingreso-mensuales.js"></script>
 <script src="../../js/graficas/grafica-ingreso-diario.js"></script>
 <script src="../../js/graficas/grafica-donas.js"></script>
+<script src="../../js/graficas/grafica-sucursales.js"></script>
 <script>
     $(document).ready(function() {
         initGraficaIngresoMensuales($('#grafica-ingreso-mensuales'));
@@ -76,6 +85,7 @@
         initGraficaDonas($('#myDona-n2'), 62, 'rgba(0, 52, 89, 1)');
         initGraficaDonas($('#myDona-n3'), 54, 'rgba(76, 95, 107, 1)');
         initGraficaDonas($('#myDona-n4'), 98, 'rgba(166, 61, 64, 1)');
+        initGraficaSucursales($('#grafica-sucursales'));
     });
 </script>
 @endsection
