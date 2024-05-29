@@ -80,8 +80,6 @@
     <script src="{{ secure_asset('js/pdfmake.min.js') }}"></script>
     <script src="{{ secure_asset('js/vfs_fonts.js') }}"></script>
 
-
-
     <script>
         $(document).ready(function() {
             // Mostrar el botón flotante al desplazarse hacia abajo
@@ -100,9 +98,14 @@
                 }, 800);
                 return false;
             });
+
+            $('#hamburger-button').click(function() {
+                $('#icon-hamburger').toggle();
+                $('#icon-close').toggle();
+                $('#sidebar-navbar').toggleClass('show');
+            });
         });
     </script>
-
 
     <!-- Bloque para scripts adicionales -->
     @stack('scripts')

@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 nav-bar-aside-css d-none">
+<div id="sidebar-navbar" class="d-flex flex-column flex-shrink-0 p-3 nav-bar-aside-css">
     <ul class="nav nav-pills flex-column mb-auto" style="padding-top: 2rem; padding-bottom: 2rem;">
         <li class="nav-item">
             <a href="{{ route('bubpdf.pagina.index') }}" class="nav-link" aria-current="page">
@@ -28,18 +28,6 @@
             <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
                 <i class="bi bi-files nav-link-icon-css"></i>
                 Contrato
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
-                <i class="bi bi-files nav-link-icon-css"></i>
-                Carta de recomendación
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('bubpdf.pagina.contratos') }}" class="nav-link">
-                <i class="bi bi-files nav-link-icon-css"></i>
-                Convenios
             </a>
         </li>
     </ul>
